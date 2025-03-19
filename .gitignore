@@ -1,5 +1,7 @@
-data/
+
 .env
 lib/
 job_titles/
 *.ann
+*.json
+.DS_Store
