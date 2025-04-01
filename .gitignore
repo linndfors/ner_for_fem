@@ -1,7 +1,9 @@
-
+data/spacy_files_for_ner
 .env
 lib/
 job_titles/
 *.ann
 *.json
 .DS_Store
+data/only_only_words_not_sents
+data/data_for_ner
