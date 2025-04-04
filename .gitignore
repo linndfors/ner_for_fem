@@ -7,3 +7,5 @@ job_titles/
 .DS_Store
 data/only_only_words_not_sents
 data/data_for_ner
+v2.0-swapped(old)
+data/utils_files
