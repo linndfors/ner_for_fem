@@ -1,7 +1,7 @@
 ## Gender-swapped data corpus
 
 **This is the gender-balanced version** of the [Ukrainian NER corpus](https://github.com/lang-uk/ner-uk/tree/master/v2.0).
-The original corpus was filtered to include only texts containing gendered entities, such as those labeled with the \texttt{JOB} tag. We then applied a gender-swapping method to augment the data. This approach enabled us to construct a gender-balanced dataset, ensuring a more equitable distribution of male and female representations (see Table 1,2).
+The original corpus was filtered to include only texts containing gendered entities, such as those labeled with the <b>JOB</b> tag. We then applied a gender-swapping method to augment the data. This approach enabled us to construct a gender-balanced dataset, ensuring a more equitable distribution of male and female representations (see Table 1,2).
 
         | Dataset           | **Total** | **Male Count** | **Male %** | **Female Count** | **Female %** | **Common Count** | **Common %** | **Unknown Count** | **Unknown %**  |
         |-------------------|-----------|----------------|------------|------------------|--------------|------------------|--------------|-------------------|----------------|
