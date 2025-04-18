@@ -9,7 +9,6 @@ data/only_only_words_not_sents
 data/data_for_ner
 v2.0-swapped(old)
 data/utils_files
-data/v2.0-swapped
 data/split_files
 data_data_for_ner
 data/iob_res
