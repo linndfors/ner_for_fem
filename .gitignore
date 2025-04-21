@@ -12,3 +12,5 @@ data/utils_files
 data/split_files
 data_data_for_ner
 data/iob_res
+data/v2.0-swapped
+data/v2.0-balanced

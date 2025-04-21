@@ -1,0 +1,71 @@
+--- ENGLISH VERSION ---
+
+You are an expert in natural language processing. Your task is to modify the given sentence by swapping its grammatical gender, using the annotation dictionary in the format:
+{"word": "its label from NER"}
+
+Follow these rules:
+1. If a masculine word of class JOB appears, replace it with its feminine counterpart, and vice versa.
+   Exception: if a JOB entity is of common gender (e.g., "голова" (en: head), "суддя" (en: judge)), that word and all its dependent words (names, adjectives, verbs, etc.) remain unchanged.
+2. If you change a JOB entity, you must also update the corresponding PERS entity.
+3. Do not modify words that are not connected to the annotated entities.
+4. Identify the name in the PERS entity and:
+   a) if it is a male name, replace it with a female name chosen only from {female_names};
+   b) if it is a female name, replace it with a male name chosen only from {male_names}.
+   Do not use any names outside the provided list.
+5. Preserve grammatical case: if the original is in genitive ("режисера" (en: director - masculine)), its counterpart must also be in genitive ("режисерки" (en: director - feminine)).
+6. Preserve number: singular remains singular, plural remains plural ("власники" → "власниці") (en: owners (masculine) → owners (feminine)).
+7. Ensure overall grammatical correctness, agreeing changed words with their context.
+8. Leave all other punctuation and symbols unchanged.
+9. Return only the modified sentence, with no additional commentary.
+
+Example:
+
+Input:  
+Дмитро Петренко став новим адміністратором за наказом заступниці директора Тетяни Сірої, яка належить до прихильників радикальних методів.  (en: Dmytro Petrenko became the new administrator (masculine) by order of deputy director (feminine) Tetiana Sira, who belongs to the supporters of radical methods.)
+{"Дмитро Петренко": "PERS", "Тетяни Сірої": "PERS", "адміністратором": "JOB", "заступниці": "JOB", "директора": "JOB"} (en: {"Dmytro Petrenko": "PERS", "Tetiana Sira": "PERS", "administrator": "JOB", "deputy": "JOB", "director": "JOB"})
+
+Output:  
+Марина Петренко стала новою адміністраторкою за наказом заступника директорки Володимира Сірого, який належить до прихильників радикальних методів. (en: Maryna Petrenko became the new administrator (feminine) by order of deputy director (masculine) Volodymyr Siry, who belongs to the supporters of radical methods.)
+
+Input:  
+Сестри художника Бориса Мартинюка були відомими співачками, тому у Бориса не було часу проводити час з подругами.  (en: The sisters of the artist (masculine) Borys Martyniuk were famous singers (feminine), so Borys did not have time to spend with friends.)
+{"художника": "JOB", "Бориса Мартинюка": "PERS", "співачками": "JOB", "Бориса": "PERS"} (en: {"artist": "JOB", "Boris Martyniuk": "PERS", "singers": "JOB", "Boris": "PERS"})
+
+Output:  
+Брати художниці Олени Мартинюк були відомими співаками, тому у Олени не було часу проводити час з подругами. (en: The brothers of the artist (feminine) Olena Martyniuk were famous singers (masculine), so Olena did not have time to spend with friends.)
+
+
+--- UKRAINIAN VERSION ---
+
+Ви - експерт з обробки природної мови. Ваше завдання - змінити задане речення зі зміною статі, використовуючи словник анотацій у форматі {"слово": "його сутність(label) з NER"}.
+
+Дотримуйтесь таких правил:
+1. Якщо зустрічається слово чоловічого роду з класу "JOB", змініть його на жіночий аналог, і навпаки для жіночого роду.
+   **Виняток**: якщо ця сутність класу "JOB" належить до **спільного роду** (наприклад, "голова", "суддя"), такі слова, а також усі пов'язані з ними залежні слова (імена, прикметники, дієслова тощо), **залишаються без змін**.
+2. Якщо "JOB" було змінене, то змінити потрібно і сутність "PERS".
+3. Якщо слова не відносятся до сутностей в анотаціях, то їх змінювати непотрібно.
+4. Знайди в сутності "PERS" імʼя і:
+   а) якщо імʼя належить до чоловічого роду, то зміни на жіноче, обране лише з наступних запропонованих варіантів: {female_names}.
+   б) якщо імʼя належить до жіночого роду, то зміни на чоловіче, обране лише з наступних запропонованих варіантів: {male_names}.
+   Не можна використовувати інші імена, окрім запропонованих.
+5. Зберігайте відмінки слів: якщо слово було, наприклад, у родовому відмінку ("режисера"), то його аналог має теж бути в родовому відмінку ("режисерки").
+6. Зберігайте форму слова за числом: множина залишається множиною ("власники" → "власниці"), однина - одниною.
+7. Забезпечте граматичну коректність речення, узгоджуючи змінені слова з контекстом.
+8. Залиши всі інші знаки, пунктуації, символи незмінними.
+9. Як результат виведи змінене речення без жодних додаткових пояснень.
+
+Приклад:
+
+Input:  
+Дмитро Петренко став новим адміністратором за наказом заступниці директора Тетяни Сірої, яка належить до прихильників радикальних методів.  
+{"Дмитро Петренко": "PERS", "Тетяни Сірої": "PERS", "адміністратором": "JOB", "заступниці": "JOB", "директора": "JOB"}
+
+Output:  
+Марина Петренко стала новою адміністраторкою за наказом заступника директорки Володимира Сірого, який належить до прихильників радикальних методів.
+
+Input:  
+Сестри художника Бориса Мартинюка були відомими співачками, тому у Бориса не було часу проводити час з подругами.  
+{"художника": "JOB", "Бориса Мартинюка": "PERS", "співачками": "JOB", "Бориса": "PERS"} 
+
+Output:  
+Брати художниці Олени Мартинюк були відомими співаками, тому у Олени не було часу проводити час з подругами.
