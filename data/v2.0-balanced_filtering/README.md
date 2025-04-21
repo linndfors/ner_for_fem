@@ -3,20 +3,20 @@
 **This is the gender-balanced version** of the [Ukrainian NER corpus](https://github.com/lang-uk/ner-uk/tree/master/v2.0).
 The original corpus was filtered to include only texts containing gendered entities, such as those labeled with the <b>JOB</b> tag. We then applied a gender-swapping method to augment the data. This approach enabled us to construct a gender-balanced dataset, ensuring a more equitable distribution of male and female representations (see Table 1,2).
 
-        | Dataset           | **Total** | **Male Count** | **Male %** | **Female Count** | **Female %** | **Common Count** | **Common %** | **Unknown Count** | **Unknown %**  |
-        |-------------------|-----------|----------------|------------|------------------|--------------|------------------|--------------|-------------------|----------------|
-        | Original dataset  | 1982      | 1643           | 83%        | 73               | 3.6%         | 223              | 11.3%        | 37                | 1.8%           |
-        | Swapped dataset   | 1982      | 226            | 11.4%      | 1443             | 73%          | 212              | 10.7%        | 95                | 4.8%           |
-        | Balanced dataset  | 3964      | 1869           | 47%        | 1516             | 38%          | 435              | 11%          | 132               | 3.2%           |
+| Dataset           | **Total** | **Male Count** | **Male %** | **Female Count** | **Female %** | **Common Count** | **Common %** | **Unknown Count** | **Unknown %**  |
+|-------------------|-----------|----------------|------------|------------------|--------------|------------------|--------------|-------------------|----------------|
+| Original dataset  | 1982      | 1646           | 83%        | 76               | 3.8%         | 223              | 11.3%        | 37                | 1.8%           |
+| Augmented dataset | 3715      | 1828           | 49.2%      | 1392             | 37.4%        | 393              | 10.5%        | 102               | 2.7%           |
+
 
 
 <p align="center"><strong>Table 1.</strong> Gender composition of <code>JOB</code> entities</p>
 
-                    | Dataset           | **Total** | **Male Count** | **Male %** | **Female Count** | **Female %** | **Unknown Count** | **Unknown %**  |
-                    |-------------------|-----------|----------------|------------|------------------|--------------|-------------------|----------------|
-                    | Original dataset  | 6235      | 2120           | 34%        | 1286             | 20.6%        | 2829              | 45.4%          |
-                    | Swapped dataset   | 1384      | 222            | 16%        | 734              | 53%          | 428               | 31%            |
-                    | Balanced dataset  | 7619      | 2342           | 30.7%      | 2020             | 26.5%        | 3257              | 42.7%          |
+| Dataset           | **Total** | **Male Count** | **Male %** | **Female Count** | **Female %** | **Unknown Count** | **Unknown %**  |
+|-------------------|-----------|----------------|------------|------------------|--------------|-------------------|----------------|
+| Original dataset  | 6235      | 2120           | 34.0%      | 1286             | 20.6%        | 2829              | 45.4%          |
+| Augmented dataset | 7517      | 2276           | 30.2%      | 2016             | 26.8%        | 3225              | 42.9%          |
+
 
 <p align="center"><strong>Table 2.</strong> Gender composition of <code>PERS</code> entities</p>
 
@@ -26,8 +26,8 @@ The labeled data corpus is located in the `v2.0-balanced/data` folder.
 
 Total in the corpus:
 
-- 965 texts (train=600, dev=66, test=289)
-- 27971 NER entities
+- 955 texts (train=600, dev=66, test=289)
+- 27,378 NER entities
 - 13 types of entities
 
 |                | **NashiGroshi** | **Bruk** | **Total** |

@@ -7,8 +7,8 @@ The labeled data corpus is located in the `v2.0-swapped/data` folder.
 
 Total in the corpus:
 
-- 405 texts (train=248, dev=27, test=120)
-- 5_978 NER entities
+- 395 texts (train=248, dev=27, test=120)
+- 5,385 NER entities
 - 13 types of entities
 
 | | **NashiGroshi** | **Bruk** | **Total** |
