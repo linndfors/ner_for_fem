@@ -26,26 +26,26 @@ The labeled data corpus is located in the `v2.0-balanced/data` folder.
 
 Total in the corpus:
 
-- 965 texts
+- 965 texts (train=600, dev=66, test=289)
 - 27971 NER entities
 - 13 types of entities
 
 |                | **NashiGroshi** | **Bruk** | **Total** |
 |----------------|------------------|----------|-----------|
-| JOB            | 2688             | 1276     | 3964      |
-| PERS           | 2878             | 4741     | 7619      |
-| ART            | 347              | 355      | 702       |
-| DATE           | 1865             | 603      | 2468      |
-| DOC            | 124              | 43       | 167       |
-| LOC            | 1644             | 1727     | 3371      |
-| MISC           | 117              | 436      | 553       |
-| MON            | 1015             | 46       | 1061      |
-| ORG            | 5692             | 899      | 6591      |
-| PCT            | 234              | 78       | 312       |
-| PERIOD         | 428              | 266      | 694       |
-| QUANT          | 307              | 119      | 426       |
+| JOB            | 2592             | 1123     | 3715      |
+| PERS           | 2822             | 4695     | 7517      |
+| ART            | 344              | 339      | 683       |
+| DATE           | 1825             | 596      | 2421      |
+| DOC            | 120              | 40       | 160       |
+| LOC            | 1630             | 1711     | 3341      |
+| MISC           | 116              | 434      | 550       |
+| MON            | 1005             | 46       | 1051      |
+| ORG            | 5598             | 882      | 6480      |
+| PCT            | 234              | 77       | 311       |
+| PERIOD         | 418              | 266      | 684       |
+| QUANT          | 303              | 119      | 422       |
 | TIME           | 5                | 38       | 43        |
-| **Total**       | **17344**           | **10627**  | **27971**  |
+| **Total**       | **17012**           | **10366**  | **27378**  |
 
 There are five files for each `filename` file from the corpus:
 
