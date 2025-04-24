@@ -16,3 +16,4 @@ data/v2.0-balanced(old_not_filtered)
 data/v2.0-swapped(old_not_filtered)
 json_results_after_ner-retraining/
 JSON_files/
+src/not_used
