@@ -8,7 +8,13 @@ job_titles/
 data/only_only_words_not_sents
 data/data_for_ner
 v2.0-swapped(old)
-data/utils_files
+data/util
 data/split_files
 data_data_for_ner
 data/iob_res
+data/v2.0-balanced(old_not_filtered)
+data/v2.0-swapped(old_not_filtered)
+json_results_after_ner-retraining/
+JSON_files/
+src/not_used
+src/gender_classification_for_entities(original).ipynb
