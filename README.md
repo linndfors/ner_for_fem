@@ -1,4 +1,4 @@
-# ner_for_fem: Gender-swapping tool
+# Gender-swapping tool
 
 
 This project corresponds to my thesis work: <b>Gender Swapping as a Data Augmentation Technique: Developing Gender-Balanced Datasets for Ukrainian Language Processing</b>.
