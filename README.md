@@ -13,18 +13,28 @@ This directory contains a collection of Jupyter notebooks developed during the r
 
 - <b>Gender-swapped dataset creation</b>
 
-    - [Gender Swapping notebook](src/gender_swapper.ipynb): The main notebook that extracts sentences containing `JOB` entities, uses an LLM to perform gender swapping, prepares a dataset for annotation, and updates annotation files to account for offset shifts. The result is a modified dataset with gender-marked, swapped sentences.
+    - [Gender Swapping notebook](src/1_gender_swapping.ipynb): The main notebook that extracts sentences containing `JOB` entities, uses an LLM to perform gender swapping, prepares a dataset for annotation, and updates annotation files to account for offset shifts. The result is a modified dataset with gender-marked, swapped sentences.
 
-    - [Filtering Non-Gender-Marked Sentences notebook](src/remove_not_swapped_sentence_from_the_text.ipynb): A helper notebook that filters the new dataset to retain only gender-swapped sentences, avoiding duplication of other entities. Corresponding annotation files are updated accordingly.
+    - [Filtering Non-Gender-Marked Sentences notebook](src/2_remove_not_swapped_sentence_from_the_text.ipynb): A helper notebook that filters the new dataset to retain only gender-swapped sentences, avoiding duplication of other entities. Corresponding annotation files are updated accordingly.
 
-    - [Match Original and Swapped Sentences notebook](src/match_swapped_dataset_with_original_by_sentences.ipynb): Matches each modified sentence with its original counterpart to create a parallel dataset while preserving label and filename metadata.
+    - [Match Original and Swapped Sentences notebook](src/3_match_swapped_dataset_with_original_by_sentences.ipynb): Matches each modified sentence with its original counterpart to create a parallel dataset while preserving label and filename metadata.
 
-    - [Script for Creating Meta Files notebook](src/creating_meta_files.ipynb): This script matches gender-swapped sentences with their original counterparts using filenames and entity labels extracted from annotation files. The output is a meta file containing index mappings for each sentence in the `.txt` files.
+    - [Script for Creating Meta Files notebook](src/4_creation_of_meta_files.ipynb): This script matches gender-swapped sentences with their original counterparts using filenames and entity labels extracted from annotation files. The output is a meta file containing index mappings for each sentence in the `.txt` files.
 
     After completing these steps, we obtained the [Gender-swapped corpora](data/v2.0-swapped), which includes `.txt`, `.ann`, and `.meta` files for each original file.
 
 
     *Note: To collect a gender-balanced dataset, we simply add the gender-swapped dataset to the original and merge their train-test split files.*
+
+---
+
+- <b>LLM</b>
+
+    - [Constructing Dataset for LLM notebook](src/5_creation_of_parallel_dataset_for_llm.ipynb): Constructs a dataset by merging parallel sentences with gendered word pairs extracted from a dictionary (via GenderGid). The data is formatted to match the requirements for fine-tuning the [Aya-101 LLM](https://huggingface.co/CohereLabs/aya-101), using instruction-style prompts. Two input types are supported: full sentences and individual word pairs. These are mixed so that the input column contains both masculine and feminine examples. The dataset is then split into training and test sets (80/20).
+
+    - [LLM fine-tuning notebook](src/ner_and_llm_models/train_llm_aya-101.ipynb): Fine-tunes the Aya-101 model using the dataset of parallel gender-marked sentences. The fine-tuned model is saved on the [HF repo](https://huggingface.co/linndfors/uk-gender-swapper-aya-101).
+
+    - [LLM comparison evaluation notebook](src/ner_and_llm_models/eval_llm_aya-101.ipynb): Compares metrics including BLEU, BERTScore, ROUGE-L, and Exact Match across the original Aya-101 model and GPT-4o-mini. Results are saved [here](data/results_of_evaluation/LLM_models_comparisson).
 
 ---
 
@@ -34,15 +44,6 @@ This directory contains a collection of Jupyter notebooks developed during the r
 
     - The second part of the notebook compares the Original NER model (loaded from the [HF repo](https://huggingface.co/dchaplinsky/uk_ner_web_trf_13class)) with the Gender-balanced NER model across the original, swapped, and gender-balanced test sets. Results are saved [here](data/results_of_evaluation/NER_evaluation_results).
 
----
-
-- <b>LLM</b>
-
-    - [Constructing Dataset for LLM notebook](src/create_parallel_dataset_for_llm.ipynb): Constructs a dataset by merging parallel sentences with gendered word pairs extracted from a dictionary (via GenderGid). The data is formatted to match the requirements for fine-tuning the [Aya-101 LLM](https://huggingface.co/CohereLabs/aya-101), using instruction-style prompts. Two input types are supported: full sentences and individual word pairs. These are mixed so that the input column contains both masculine and feminine examples. The dataset is then split into training and test sets (80/20).
-
-    - [LLM fine-tuning notebook](src/ner_and_llm_models/train_llm_aya-101.ipynb): Fine-tunes the Aya-101 model using the dataset of parallel gender-marked sentences. The fine-tuned model is saved on the [HF repo](https://huggingface.co/linndfors/uk-gender-swapper-aya-101).
-
-    - [LLM comparison evaluation notebook](src/ner_and_llm_models/eval_llm_aya-101.ipynb): Compares metrics including BLEU, BERTScore, ROUGE-L, and Exact Match across the original Aya-101 model and GPT-4o-mini. Results are saved [here](data/results_of_evaluation/LLM_models_comparisson).
 
 ---
 
