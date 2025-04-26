@@ -53,7 +53,7 @@ This directory contains a collection of Jupyter notebooks developed during the r
 
     - [Script to Classify Gender of Entities notebook](src/gender_classification_for_entities.ipynb): Classifies `JOB` entities into gender categories (female, male, common) by lemmatizing terms using Stanza and pymorphy, followed by dictionary-based classification with gendered word pairs. A section is also included for classifying `PERS` entities using a dataset of Ukrainian names (note: some names may not reflect common real-world usage, so caution is advised). This notebook also calculates <b>recall</b> for `JOB` entities, split by gender.
 
-    - [Metrics Calculation notebook](src/metrics.ipynb): Computes various evaluation metrics, including experiments not covered in the other notebooks. Calculates: Exact Match without `PERS`, JOB Match, Token Count Match for LLM comparison, and dictionary pairs match. Also includes analysis and evaluation of the annotation project.
+    - [Metrics Calculation notebook](src/metrics.ipynb): Computes various evaluation metrics, including experiments not covered in the other notebooks. Calculates: Exact Match without `PERS`, JOB Match, Token Count Match for LLM comparison. Check the original dataset to find the dictionary pairs matching. Also includes analysis and evaluation of the annotation project.
 
     - [Util folder](./src/util): Contains additional scripts for data inspection, minor filtering, and experimental analysis (e.g., checking whether indices in annotation files correspond to the content of text files, inspecting entity distributions in corpora, etc.).
 
@@ -71,7 +71,7 @@ This directory contains a collection of Jupyter notebooks developed during the r
 
 Also, you can find the LLM prompt used to generate the initial (bronze) gender-swapped dataset [here](data/prompt.txt).
 
-*Note: Other files in this directory are auxiliary outputs from notebooks and can be considered utilities.*
+*Note: Other files in this directory are functional outputs from notebooks and can be considered utilities.*
 
 ## Annotation Project
 
